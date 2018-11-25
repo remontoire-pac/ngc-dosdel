@@ -7,7 +7,7 @@ D6 = readtable('data\supplementaryDataset6.csv','TextType','string');
 
 x = D6.ap1_baseline;
 
-% SF33
+% histogram of counts per number of sequencing reads
 xe = 0:5:max(x);
 [hc,il] = histcounts(x,xe);
 figure('Units','inches','Position',[2 2 6.5 3.35]);
@@ -19,7 +19,7 @@ set(gca,'XTick',bci,'XTickLabel',il(bci));
 xlabel('sequencing reads');
 ylabel('count');
 
-% SF34-36
+% histograms of counts per individual diversity element
 ct = crosstab(x,D6.scaffold);
 ct = sum(ct.*repmat((1:size(ct,1))',1,max(D6.scaffold)));
 ct = sort(numel(ct).*ct./sum(ct),'descend');
@@ -44,7 +44,7 @@ bar(ct,'FaceColor',[0 0 1],'EdgeColor',[0 0 1],'LineWidth',0.5);
 xlabel('BB2 rank');
 ylabel('relative abundance');
 
-% SF37-38 (BB2: 70 & 77)
+% position in enrichment rank of duplicate building blocks (BB2: 70 & 77)
 load data\chigramHitListDepthCA9.mat F*;
 cF5a = 1*ones(119,3);
 cF5a(70,:) = [0 0 1];
@@ -72,7 +72,7 @@ cF5b.CData(:,:) = cF5a;
 xlabel('BB2 rank');
 ylabel('enrichment, log_2(\chi^2)');
 
-% % SF39 (BB1: 88)
+% position in enrichment rank (BB1: 88)
 cF5a = 1*ones(119,3);
 cF5a(88,:) = [0 0 1];
 [schi,sBBC] = sort(F(5).chi,'descend'); % sort order for BB1
@@ -84,7 +84,7 @@ cF5b.CData(:,:) = cF5a;
 xlabel('BB1 rank');
 ylabel('enrichment, log_2(\chi^2)');
 
-% % SF40 (BB2: 98)
+% position in enrichment rank (BB2: 98)
 cF5a = 1*ones(119,3);
 cF5a(98,:) = [0 0 1];
 [schi,sBBC] = sort(F(4).chi,'descend'); % sort order for BB2

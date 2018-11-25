@@ -5,7 +5,7 @@ wf = 'd:\job\del\ms'; addpath(genpath(wf)); cd(wf);
 load data\foldedECFP6SimFusions.mat qsm qsx qst* st*;
 load data\prctileECFP6GroupFusions.mat dpt v*;
 
-% Figure 4a: similarity fusion plot
+% similarity fusions: intra-library comparisons
 mc = [0.2 0.2 0.2; 0.85 0.75 0.25]; % colors
 ms = ['s','s','s','s','o','o','o','o']; % shapes
 mz = [256,64,256,64,256,64,256,64]; % sizes
@@ -30,7 +30,7 @@ for x1=1:8
     hold off;
 end
 
-% Figure 4b: similarity fusion plot
+% similarity fusions: cross-library comparisons
 mc = [0 0 0;1 0 1; 0 1 1; 1 0 0; 0 0 1; 0 1 0]; % colors
 ms = ['s','s','s','s','o','o','o','o']; % shapes
 mz = [256,64,256,64,256,64,256,64]; % sizes

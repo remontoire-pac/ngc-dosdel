@@ -5,7 +5,7 @@ wf = 'd:\job\del\ms'; addpath(genpath(wf)); cd(wf);
 D6 = readtable('data\supplementaryDataset6.csv','TextType','string');
 load data\chigramHitListDepthCA9.mat F*;
 
-% create and annotate Figure 5d
+% create and annotate normalized-fold-change plot
 [~,sCA9] = sort(D6.ca9_B); % sort order for products
 [schi,sBBC] = sort(F(4).chi,'descend'); % sort order for BB_C
 cF5a = 0.75*ones(119,3);
@@ -18,13 +18,13 @@ colormap(cF5a);
 xlim([0 numel(sCA9)]); ylim([0 18]);
 xticks(''); xticklabels('');
 
-% create and annotate Figure 5e
+% create and annotate chigram enrichment plot
 figure('Units','centimeters','Position',[2 2 16 8]);
 cF5b = bar(F(4).chi);
 cF5b.FaceColor = 'flat';
 cF5b.CData(:,:) = cF5a;
 
-% create and annotate Figure 5f
+% create and annotate 3D chigram enrichment plot
 ttt = zeros(0,3);
 ttc = zeros(0,1);
 for xi=1:3
