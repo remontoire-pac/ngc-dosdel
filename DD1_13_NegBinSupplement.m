@@ -54,7 +54,7 @@ bar(log2(1+histcounts(ty,0:700)),'FaceColor',[0 0 1],'EdgeColor',[0 0 1],'LineWi
 xlim([0 700]);
 ylabel('log2(count)');
 subplot(2,1,2); 
-ty = y0(f);
+ty = y2(f);
 bar(log2(1+histcounts(ty,0:700)),'FaceColor',[0 0 1],'EdgeColor',[0 0 1],'LineWidth',0.5);
 xlim([0 700]);
 ylabel('log2(count)');
