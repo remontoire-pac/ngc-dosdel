@@ -65,9 +65,16 @@ figure('Units','inches','Position',[2 2 6.5 3.35]);
 for i=[0 1 2]
     subplot(3,1,i+1); 
     ty = eval(['y' num2str(i)]);
-    bar(log2(1+histcounts(ty,0:700)),'FaceColor',[0 0 1],'EdgeColor',[0 0 1],'LineWidth',0.5);
-    xlim([0 700]);
-    ylabel('log2(count)');
+    bar(log2(1+histcounts(ty,0:600)),'FaceColor',[0 0 1],'EdgeColor',[0 0 1],'LineWidth',0.5);
+    xlim([0 600]);
+    if (i<2)
+%         xticks([])
+        xticklabels({''});
+    end
+%     xticklabels('FontSize',8,'FontWeight','bold');
+    ax = gca;
+    ax.FontWeight = 'bold'; 
+    ylabel('log_2(count)','FontSize',10,'FontWeight','bold');
 end
-xlabel('sequencing reads');
+xlabel('sequencing reads','FontSize',10,'FontWeight','bold');
 toc;

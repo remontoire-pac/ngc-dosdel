@@ -15,9 +15,9 @@ end
 FFd = FF(strcmp(D5.collection,'AP1'),:);
 
 % WARNING: fully enabling loop creates 59*59=3481 similarity tiles
-for i=1:2 % 1:59
+for i=1%:2 % 1:59
     ti = (1:1824)+(i-1)*1824;
-    for j=i:59
+    for j=i%:59
         tj = (1:1824)+(j-1)*1824;
         if (i==j)
             d = single((1-squareform(pdist(FFd(ti,:),'jaccard'))));

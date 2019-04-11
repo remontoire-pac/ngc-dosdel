@@ -29,7 +29,7 @@ for x1=1:8
     end
     hold off;
 end
-
+ 
 % similarity fusions: cross-library comparisons
 mc = [0 0 0;1 0 1; 0 1 1; 1 0 0; 0 0 1; 0 1 0]; % colors
 ms = ['s','s','s','s','o','o','o','o']; % shapes
@@ -51,6 +51,6 @@ for x1=1:8
         end
     end
 end
-    
+
 toc;
 
